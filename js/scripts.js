@@ -7,6 +7,10 @@ Bank.prototype.assignID = function () {
   this.currentId += 1268;
   return this.currentId;
 };
+Bank.prototype.addAccount = function (account) {
+  account.id = this.assignID();
+  this.accounts[account.id] = account
+}
 
 
 
