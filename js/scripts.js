@@ -31,7 +31,34 @@ function account(name, balance) {
   this.balance = balance
   this.history = ["Credit:$" + balance]
 }
-
+account.prototype.makeDeposit = function (amount) {
+  $("#warn").hide();
+  this.balance += parseInt(amount);
+  this.history.push("Credit:$" + amount);
+}
+account.prototype.makeWithdrawl = function (amount) {
+  if (amount > this.balance) {
+    $("#warn").show();
+  } else {
+    $("#warn").hide();
+    this.balance -= parseInt(amount);
+    this.history.push("Debit:$" + amount);
+  }
+}
+account.prototype.getHistory = function () {
+  let output = "";
+  for (let i = 0; i < this.history.length; i++) {
+    if (this.history[i].toString().includes("Debit")) {
+      output += "<span class='negative'>" + this.history[i] + "</span>";
+    } else {
+      output += this.history[i];
+    }
+    if (i < this.history.length - 1) {
+      output += ", ";
+    }
+  }
+  return output;
+}
 
 
 
