@@ -1,6 +1,13 @@
+body{
+  background-image:url(../img/pexels-karolina-grabowska-4386471.jpg) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .header{
   font-size: 35px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:'Times New Roman', Times, serif;
 }
 .card{
   width: 400px;

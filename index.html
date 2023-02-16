@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery-3.6.1.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/scripts.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Bank Account</title>
 </head>
-<body>
+<body class="mx-5">
   
   <div class="container">
-
-    <h1 class="header">WELCOME TO CREDIT UNION!</h1>
+  <div>
+    <h1 class="header my-5">WELCOME TO CREDIT BANK!</h1> 
     <p id="warn">INSUFFICIENT FUNDS!!</p>
     <p id="warn2">INITIAL DEPOSIT CANNOT BE LESS THAN $1000!</p>
   </div>
@@ -24,24 +24,24 @@
     <label for="">Existing Account</label>
     <input type="radio" name="accountType" value="current">
   </div>
-  <div id="new">
+  <div id="new" >
     <form class="newAccForm">
-      <div class="card">
+      <div class="card ">
         <div class="card-body">
-          <h2 class="shead">REGISTER A NEW ACCOUNT:</h2><br>
-          <div class="form-group row">
+          <h2 class="shead">REGISTER A NEW ACCOUNT:</h2>
+          <div class="form-group row ">
             <label for="inputName" class="col-sm-5 col-form-label">Account Name:</label>
             <div class="col-sm-2">
               <input type="text" class="form-control" id="inputName" style="width:180px;" required>
             </div>
           </div>
-          <div class="form-group row">
+          <div class="form-group row my-2">
             <label for="initialDeposit" class="col-sm-5 col-form-label">Initial Deposit:</label>
             <div class="col-sm-5">
               <input type="number" class="form-control" id="initialDeposit" style="width:130px;" required>
             </div>
           </div>
-          <button class="btn btn-dark" type="submit" name="button">Create Account</button>
+          <button class="btn btn-danger my-3" type="submit" name="button">Deposit</button>
         </div>
       </div>
     </form>
@@ -57,13 +57,13 @@
               <input type="number" class="form-control" id="newDeposit" style="width:120px;">
             </div>
           </div>
-          <div class="form-group row">
+          <div class="form-group row my-2">
             <label for="newWithdraw" class="col-sm-7 col-form-label">Withdrawal Amount:</label>
             <div class="col-sm-3">
               <input type="number" class="form-control" id="newWithdraw" style="width:120px;">
             </div>
           </div>
-          <button class="btn btn-dark" type="submit" name="button">Process Transaction</button>
+          <button class="btn btn-danger" type="submit" name="button">Process </button>
         </div>
       </div>
     </form>
@@ -80,9 +80,9 @@
   <h1 class="header">TRANSACTION INFORMATION</h1>
   <hr>
   <p><b> Name: <span id="accName"></span></p>
-  <p><b> Account Number: <span id="accNum"></span></p>
-  <p><b> Current Balance: <span id="curBal"></span></p>
-  <p><b> Account History: <span id="accHistory"></span></p>
+  <p><b> Account Number: <span id="accNum" class="bg-primary"></span></p>
+  <p><b> Current Balance: <span id="curBal" class="bg-primary"></span></p>
+  <p><b> Account History: <span id="accHistory" class="bg-primary"></span></p>
     <div id="buttons">
     </div>
 </div>
