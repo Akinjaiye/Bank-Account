@@ -18,7 +18,12 @@ Bank.prototype.deleteAccount = function (id) {
   delete this.accounts[id];
   return true;
 };
-
+Bank.prototype.findAccount = function (id) {
+  if (this.accounts[id] != undefined) {
+    return this.accounts[id];
+  }
+  return false;
+};
 
 
 
