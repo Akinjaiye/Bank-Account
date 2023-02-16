@@ -1,3 +1,8 @@
+// BUSINESS LOGIC
+function Bank() {
+  this.accounts = {};
+  this.currentId = 2209146835;
+}
 
 
 
@@ -8,8 +13,17 @@
 
 
 
-
-
+// UI
+$(document).ready(function () {
+  $("input:radio[value=new]").click(function () {
+    $("#current").hide();
+    $("#new").fadeIn("slow");
+  });
+  $("input:radio[value=current]").click(function () {
+    $("#current").fadeIn("slow");
+    $("#new").hide();
+  });
+});
 
 $(document).ready(function () {
   attachAccountListeners();
