@@ -25,8 +25,12 @@ Bank.prototype.findAccount = function (id) {
   return false;
 };
 
-
-
+// constructor for account
+function account(name, balance) {
+  this.name = name
+  this.balance = balance
+  this.history = ["Credit:$" + balance]
+}
 
 
 
