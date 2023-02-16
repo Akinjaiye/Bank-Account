@@ -3,7 +3,10 @@ function Bank() {
   this.accounts = {};
   this.currentId = 2209146835;
 }
-
+Bank.prototype.assignID = function () {
+  this.currentId += 1268;
+  return this.currentId;
+};
 
 
 
