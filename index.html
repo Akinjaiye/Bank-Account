@@ -12,5 +12,39 @@
 </head>
 <body>
   
+  <div class="container">
+
+    <h1 class="header">WELCOME TO CREDIT UNION!</h1>
+    <p id="warn">INSUFFICIENT FUNDS!!</p>
+    <p id="warn2">INITIAL DEPOSIT CANNOT BE LESS THAN $1000!</p>
+  </div>
+  <div class="radio">
+    <label for="">New Customer</label>
+    <input type="radio" name="accountType" value="new" checked>
+    <label for="">Existing Account</label>
+    <input type="radio" name="accountType" value="current">
+  </div>
+  <div id="new">
+    <form class="newAccForm">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="shead">REGISTER A NEW ACCOUNT:</h2><br>
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-5 col-form-label">Account Name:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="inputName" style="width:180px;" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="initialDeposit" class="col-sm-5 col-form-label">Initial Deposit:</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="initialDeposit" style="width:130px;" required>
+            </div>
+          </div>
+          <button class="btn btn-dark" type="submit" name="button">Create Account</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
