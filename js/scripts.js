@@ -60,7 +60,50 @@ account.prototype.getHistory = function () {
   return output;
 }
 
+let bank = new Bank();
 
+function displayAccount(bank) {
+  let accList = $("#accSelect");
+  let accHTML = "";
+  Object.keys(bank.accounts).forEach(function (key) {
+    const account = bank.findAccount(key);
+    accHTML += "<option id=" + account.id + ">" + account.name + "</option>";
+  });
+  accList.html(accHTML);
+}
+function showAccount(accountId) {
+  const account = bank.findAccount(accountId);
+  $("#balanceDisp").show();
+  $("#accName").html(account.name);
+  $("#accNum").html(account.id);
+  $("#curBal").html("$" + account.balance);
+  $("#accHistory").html(account.getHistory());
+  let buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class='deleteButton' id=" +  + account.id + ">Delete</button>");
+}
+function getSelectedAccount() {
+  return parseInt($("#accSelect").children(":selected").attr("id"));
+}
+function attachAccountListeners() {
+  $("#buttons").on("click", ".deleteButton", function() {
+    bank.deleteAccount(this.id);
+    $("#balanceDisp").hide();
+    displayAccount(bank);
+  });
+}
+
+//local storage
+let myObj = {
+  accountName : "Ade",
+  initialDeposit : 5000
+}
+
+let myObj_str = JSON.stringify(myObj);
+
+localStorage.setItem("myObj", myObj_str);
+
+let myObj_unstr = JSON.parse(localStorage.getItem("myObj"));
 
 // UI
 $(document).ready(function () {
